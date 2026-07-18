@@ -6,6 +6,8 @@ export function useDataLoader(url) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
   useEffect(() => {
     let ignore = false;
 
@@ -13,7 +15,12 @@ export function useDataLoader(url) {
       setLoading(true);
       setError(null);
       try {
+        await sleep(2000);
+
         const response = await fetch(url);
+
+        // throw new Error("Simulated network failure");
+
         if (!response.ok) throw new Error(`Request failed: ${response.status}`);
         const json = await response.json();
         if (!ignore) {
