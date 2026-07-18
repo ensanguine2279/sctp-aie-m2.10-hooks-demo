@@ -7,7 +7,8 @@ import { useAuth } from "./hooks/useAuth";
 import AuthPanel from "./components/AuthPanel";
 import NameSearchPanel from "./components/NameSearchPanel";
 import TagSearchPanel from "./components/TagSearchPanel";
-import DataPanel from "./components/DataPanel";
+import ContactDataPanel from "./components/ContactDataPanel";
+import TagDataPanel from "./components/TagDataPanel";
 
 // ─── App Root ──────────────────────────────────────────────────────────────────
 function AppContent() {
@@ -18,7 +19,8 @@ function AppContent() {
         <AuthPanel />
         <NameSearchPanel />
         <TagSearchPanel />
-        <DataPanel />
+        <ContactDataPanel />
+        <TagDataPanel />
       </div>
     </div>
   );
