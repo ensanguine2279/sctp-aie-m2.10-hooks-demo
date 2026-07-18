@@ -1,37 +1,23 @@
 import { useState, useMemo } from "react";
 import { useDebounce } from "../hooks/useDebounce";
 
-const CONTACTS = [
-  "Alice Tan",
-  "Bob Lim",
-  "Carol Wong",
-  "David Chen",
-  "Eve Ng",
-  "Frank Ho",
-  "Grace Koh",
-  "Hassan Ibrahim",
-  "Ivan Teo",
-  "Keith Tan",
-  "Karen Yeo",
-  "Leon Goh",
-  "Mei Lin Foo",
-  "Nathan Seah",
-  "Olivia Png",
-  "Priya Nair",
-  "Quentin Tan",
-  "Rachel Sim",
-  "Jeff Wee",
-  "Tricia Lau",
+const TAGS = [
+  "React",
+  "TypeScript",
+  "Testing",
+  "Performance",
+  "Custom Hooks",
+  "React Query",
 ];
 
-function SearchPanel() {
+function TagSearchPanel() {
   const [query, setQuery] = useState("");
 
   const debouncedQuery = useDebounce(query);
 
   const results = useMemo(
     () =>
-      CONTACTS.filter((name) =>
+      TAGS.filter((name) =>
         name.toLowerCase().includes(debouncedQuery.toLowerCase()),
       ),
     [debouncedQuery],
@@ -39,11 +25,11 @@ function SearchPanel() {
 
   return (
     <div className="panel">
-      <h2>Search</h2>
+      <h2>Search Tags</h2>
       <div className="search-box">
         <input
           type="text"
-          placeholder="Search contacts..."
+          placeholder="Search tags..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -60,4 +46,4 @@ function SearchPanel() {
   );
 }
 
-export default SearchPanel;
+export default TagSearchPanel;

@@ -5,7 +5,8 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { useAuth } from "./hooks/useAuth";
 
 import AuthPanel from "./components/AuthPanel";
-import SearchPanel from "./components/SearchPanel";
+import NameSearchPanel from "./components/NameSearchPanel";
+import TagSearchPanel from "./components/TagSearchPanel";
 import DataPanel from "./components/DataPanel";
 
 // ─── App Root ──────────────────────────────────────────────────────────────────
@@ -15,7 +16,8 @@ function AppContent() {
       <h1>hooks-demo</h1>
       <div className="panels">
         <AuthPanel />
-        <SearchPanel />
+        <NameSearchPanel />
+        <TagSearchPanel />
         <DataPanel />
       </div>
     </div>
